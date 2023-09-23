@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +9,85 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
 </head>
+
 <body class="flex justify-center items-center bg-gray-100 w-100 h-screen">
-    
-    <form action="" class=" w-50 border- bg-sky-500 p-4 border border-black rounded-t-xl bg-white">
-        <div class="flex justify-center items-center flex-col text-center mb-5">
+
+    <form method="POST" class=" w-50 border- bg-sky-500 p-4 border border-black rounded-t-xl bg-white">
+        <div
+            class="flex justify-center items-center flex-col text-center mb-5 bg-purple-300 bg-opacity-80 rounded-full">
             <img src="./assets/imagen-login.png" class="w-1/2 img- rounded-full" alt="Imagen Generica">
-            <h2 class="text-xl uppercase m-1">Registrarse</h2>
+            <h2 class="text-white text-xl uppercase m-1">Registrarse</h2>
         </div>
 
         <div class="flex flex-col ">
-            <label for="usuario" class="text-gray-500 text-sm ">Nombre de usuario:</label>
-            <div class="w-full relative">
+            <div class="w-full relative my-3 ">
+                <label for="usuario" class="text-gray-500 text-sm ">Nombre de usuario:</label>
                 <div class="flex">
-                    <input class=" w-full p-2 border border-b-2 border-purple-300 focus:border-purple-500 focus:outline-none focus:bg-purple-900 focus:bg-opacity-20" type="text" name="usuario" id="usuario">
-                    <button class="hidden pr-2 border border-l-4 bg-blue-300 bg-opacity-80 border-purple-300 botonAyuda"><img src="./assets/help.svg" class="h-10 mx-1" alt=""></button>
+                    <input
+                        class=" w-full p-2 border border-b-2 border-purple-300 focus:border-purple-500 focus:outline-none focus:bg-purple-900 focus:bg-opacity-20"
+                        type="text" name="usuario" id="usuario">
                 </div>
                 <p class="mt-1 text-gray-300 text-xs textoAyuda" id="errorUsuario">Maximo 16 caracteres</p>
             </div>
 
+            <div class="w-full relative">
+                <label for="email" class="text-gray-500 text-sm ">Correo Electronico:</label>
+                <div class="flex">
+                    <input
+                        class=" w-full p-2 border border-b-2 border-purple-300 focus:border-purple-500 focus:outline-none focus:bg-purple-900 focus:bg-opacity-20"
+                        type="text" name="email" id="email">
+                    <select name="emailList" id="emailList"
+                        class="pl-2 border rounded-r-xl text-purple-600 bg-purple-200 border-purple-600 cursor-pointer">
+                        <option class="text-purple-500" value="@gmail.com">@gmail.com</option>
+                        <option class="text-purple-500" value="@outlook.com">@outlook.com</option>
+                        <option class="text-purple-500" value="@yahoo.com">@yahoo.com</option>
+                    </select>
+                </div>
+                <p class="mt-1 hidden text-gray-300 text-xs textoAyuda" id="errorEmail"></p>
+            </div>
+
+            <div class="w-full relative my-3 border-b-2 border-opacity-50">
+                <label for="pwd" class="text-gray-500 text-sm ">Contraseña:</label>
+                <div class="flex">
+                    <input
+                        class=" w-full p-2 border border-b-2 border-purple-300 focus:border-purple-500 focus:outline-none focus:bg-purple-900 focus:bg-opacity-20"
+                        type="password" name="pwd" id="pwd">
+                    <ul class="hidden tooltip text-xs w-50 text-left absolute top-100 left-100 bg-purple-300 transform -translate-x-full -translate-y-1/4 p-2 bg-opacity-50 rounded-xl"
+                        id="tooltipPwd">
+                        <li>* Ingrese al menos 1 mayuscula.</li>
+                        <li>* Debe contener minimo 8 caractes.</li>
+                        <li>* Debe contener un numero.</li>
+                        <li>* Debe contener un caracter especial (!@#$%).</li>
+                    </ul>
+                    <button value="oculto" id="mostrarContrasena"
+                        class=" border rounded-r-xl text-purple-600 bg-purple-200 border-purple-600 cursor-pointer">
+                        <img id="imgMostrarContrasena" class="w-11 p-2" src="./assets/invisible.png" alt="visible">
+                    </button>
+
+                </div>
+                <p class="mt-1 hidden text-gray-300 text-xs textoAyuda" id="errorPwd"></p>
+            </div>
+
+            <div class="w-full relative my-3 border-b-2 border-opacity-50">
+                <label for="pwdRepeat" class="text-gray-500 text-sm ">Repetir Contraseña:</label>
+                <div class="flex relative">
+                    <input
+                        class=" w-full p-2 border border-b-2 border-purple-300 focus:border-purple-500 focus:outline-none focus:bg-purple-900 focus:bg-opacity-20"
+                        type="password" name="pwdRepeat" id="pwdRepeat">
+                    <button value="oculto" id="mostrarContrasenaRepeat"
+                        class=" border rounded-r-xl text-purple-600 bg-purple-200 border-purple-600 cursor-pointer">
+                        <img id="imgMostrarContrasenaRepeat" class="w-11 p-2" src="./assets/invisible.png" alt="visible">
+                    </button>
+
+                </div>
+                <p class="mt-1 hidden text-gray-300 text-xs textoAyuda" id="pwdRepeatMensaje"></p>
+            </div>
+        </div>
+
+        <div class="w-full flex justify-center">
+            <button id="enviar" type="submit" class="bg-blue-500 text-white p-2 hover:bg-blue-600">Registrar</button>
         </div>
     </form>
 </body>
+
 </html>
