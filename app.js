@@ -123,7 +123,7 @@ $(document).ready(function() {
     const validarUsuario = () =>{
         const usuario = document.getElementById('usuario').value;
 
-        if(usuario.length <= 17){
+        if(usuario.length <= 16){
             return usuario;
         } else{
             return false;
@@ -140,7 +140,6 @@ $(document).ready(function() {
     let validacionCompleta = true;
 
     if (!usuario) {
-        $('#errorUsuario').text('Nombre de usuario Incorrecto');
         $('#errorUsuario').removeClass('text-green-300');
         $('#errorUsuario').addClass('text-red-300');
         validacionCompleta = false;
