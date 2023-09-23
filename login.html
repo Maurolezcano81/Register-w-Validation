@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mauro Lezcano</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body class="flex justify-center items-center bg-gray-100 w-100 h-screen">
+    
+    <form action="" class=" w-50 border- bg-sky-500 p-4 border border-black rounded-t-xl bg-white">
+        <div class="flex justify-center items-center flex-col text-center mb-5">
+            <img src="./assets/imagen-login.png" class="w-1/2 img- rounded-full" alt="Imagen Generica">
+            <h2 class="text-xl uppercase m-1">Registrarse</h2>
+        </div>
+
+        <div class="flex flex-col ">
+            <label for="usuario" class="text-gray-500 text-sm ">Nombre de usuario:</label>
+            <div class="w-full relative">
+                <div class="flex">
+                    <input class=" w-full p-2 border border-b-2 border-purple-300 focus:border-purple-500 focus:outline-none focus:bg-purple-900 focus:bg-opacity-20" type="text" name="usuario" id="usuario">
+                    <button class="hidden pr-2 border border-l-4 bg-blue-300 bg-opacity-80 border-purple-300 botonAyuda"><img src="./assets/help.svg" class="h-10 mx-1" alt=""></button>
+                </div>
+                <p class="mt-1 text-gray-300 text-xs textoAyuda" id="errorUsuario">Maximo 16 caracteres</p>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>
