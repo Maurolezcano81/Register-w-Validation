@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#usuario', '#pwd', '#email', '#pwdRepeat').on('keydown', function(e){
+    $('#usuario, #pwd, #email, #pwdRepeat').on('keydown', function(e){
         prohibirTeclas(e);
     })
 
@@ -82,9 +82,9 @@ $(document).ready(function() {
     })
 
     const prohibirTeclas = (e) =>{
-        e.preventDefault();
         if(e.keyCode >= 90 || e.keyCode <= 48 && e.keyCode != 8 && e.keyCode != 9){
             e.preventDefault();
+            console.log('hola')
         }
     }
 
